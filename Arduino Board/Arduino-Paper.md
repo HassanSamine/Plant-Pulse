@@ -35,4 +35,17 @@ To begin your journey with Arduino, you need three main components:
 2. **Arduino IDE**: Download and install the free Arduino IDE from the official Arduino website.
 3. **Code and Components**: Start with simple projects using basic components like LEDs and buttons before advancing to more complex setups with sensors and motors.
 
+# What’s on an Arduino Board
+
+In this chapter, we will dissect the parts of an Arduino board and explain their features and functions. This overview will try to provide a clear understanding of the elements that make up this tool.
+
+## Understanding the Arduino Board
+
+At its core, the most important component is the one highlighted in the Figure below. **The Microcontroller** — the brain of the board — which processes your code and enables communication with the outside world through its pins. These pins can be configured as **inputs** (for reading sensor values) or **outputs** (for controlling devices). Collectively, these pins are referred to as **GPIOs** (General Purpose Input/Output).
+
+**Input Pins** read voltage levels applied to the pins and **Output Pins** adjust the voltage at the pins to control external devices.
+
+GPIO are basically the bridge between your code and the physical components you wish to work with.
+
 ![alt text](Microcontroller.png)
+
