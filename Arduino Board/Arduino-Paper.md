@@ -35,4 +35,4 @@ To begin your journey with Arduino, you need three main components:
 2. **Arduino IDE**: Download and install the free Arduino IDE from the official Arduino website.
 3. **Code and Components**: Start with simple projects using basic components like LEDs and buttons before advancing to more complex setups with sensors and motors.
 
-![alt text](image.png)
+![alt text](Microcontroller.png)
