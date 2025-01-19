@@ -99,3 +99,44 @@ The breadboard has two main sections:
 I have showed in the Figure below how some of these holes are connected
 
 ![alt text](Breadboard.png)
+
+# How to Program an Arduino Board
+
+In the third and last chapter of this introductory paper about Arduino, we will be learning the basics of programming an Arduino board. We will cover how every Arduino program is laid out, how to use variables, how to use control structures and the most important Arduino functions. 
+
+## How to Use Variables (Setup & Loop)
+
+### *The Setup and Loop functions*
+
+When you first open a new sketch in your Arduino IDE, you will find some lines written just like in the below figure:
+
+![alt text](Setup&Loop.png)
+
+These lines are the two main functions of any Arduino code, the first function is called “Setup”, this is where you put the part of the code that needs too run once, and any code you put here will be executed to to bottom until it reaches the end of the function and moves on to the next function.
+
+The Loop function also executes the code within it from top to bottom, and once it gets to the curly bracket signaling the end of the function it goes back to the beginning and runs the code once again. The code in this function keeps repeating itself until you remove the power from you Arduino board.
+
+These two function “Setup” and “Loop” are extremely important, and will be part of any Arduino code you will write, in fact if you leave one of these codes out you’re going to get an error.
+
+### *Variables*
+
+Variables are also an essential part of programming an Arduino board that you will be using in every Arduino program. If you have any experience with programming you’re most likely familiar with the concept of variables, but we will have a brief reminder just in case you’re not.
+
+type name = value; //Declaration and initialization
+
+A Variable is like a box where you can store information, if you’re trying to store the value from a sensor for example you would put into a variable.
+
+A Variable needs four things, a ***type, name, equal sign and a value*** that you can actually store into the variable.
+
+The type represents the data type, whether it’s a number, character, integer etc. It’s basically the kind of information you will be storing. There’s a bunch of data types below is some of these types.
+
+![alt text](VariableTypes.png)
+
+The name of the variable is how you would like to refer to it in your code, variable names can contain letters, numbers and underscores but they can’t start with a number.
+
+The equal sign is the assignment operator it basically means you take the value you have and store into your variable.
+
+Note: When you declare a variable, you can use it in your code just by the name.
+
+type name;
+name = value;
