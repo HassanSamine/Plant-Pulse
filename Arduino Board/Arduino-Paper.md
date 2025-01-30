@@ -20,7 +20,7 @@ By connecting inputs and outputs to an Arduino board, you can create interactive
 The key role of Arduino is to process input data and execute output actions based on the logic you define in the code. Here’s how the process unfolds:
 
 1. **Hardware**: Select an Arduino board suitable for your project’s requirements. All Arduino boards share the common feature of a microcontroller but may differ in specifications like size, power, and input/output pins.
-2. **IDE**: Use the Arduino IDE to write your code. This software simplifies coding and debugging, providing essential tools to upload the program to your board. IDE stands for Integrated Development Environment.
+2. **IDE**: Use the Arduino IDE to write your code. This software simplifies coding and debugging, providing essential tools to upload the program to your board. IDE stands for Integrated Development Environment. Here you can find a tutorial on how to download the Arduino IDE (https://www.youtube.com/watch?v=3awCkLS7gHI&ab_channel=ProgrammingKnowledge2).
 3. **Code (Sketch)**: The code you write is referred to as a sketch. Arduino sketches are based on C and C++ programming languages but include specialized functions for Arduino, making them beginner-friendly. Learning Arduino coding can also pave the way for mastering other programming languages.
 
 ### Why Learn Arduino?
@@ -122,11 +122,10 @@ These two function “Setup” and “Loop” are extremely important, and will 
 
 Variables are also an essential part of programming an Arduino board that you will be using in every Arduino program. If you have any experience with programming you’re most likely familiar with the concept of variables, but we will have a brief reminder just in case you’re not.
 
-type name = value; //Declaration and initialization
-
 A Variable is like a box where you can store information, if you’re trying to store the value from a sensor for example you would put into a variable.
 
 A Variable needs four things, a ***type, name, equal sign and a value*** that you can actually store into the variable.
+type name = value; //Declaration and initialization
 
 The type represents the data type, whether it’s a number, character, integer etc. It’s basically the kind of information you will be storing. There’s a bunch of data types below is some of these types.
 
@@ -140,3 +139,5 @@ Note: When you declare a variable, you can use it in your code just by the name.
 
 type name;
 name = value;
+
+### *Basic Program Examples*
