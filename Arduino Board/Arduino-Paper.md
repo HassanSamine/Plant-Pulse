@@ -141,3 +141,62 @@ type name;
 name = value;
 
 ### *Basic Program Examples*
+In the Arduino IDE you can find some basic Arduino sketched that we’re gonna be using to develop a better understanding on how to program an Arduino Board. 
+
+First of all you can find these programs by going to ***File>Examples>Basics.***
+
+![alt text](Basic%20Programs.png)
+
+- **The Fade Program:**
+
+The first program we will be looking into is the “Fade” program, where an LED is gradually fading using the PWM pins on an Arduino previously explained.
+
+```
+int led = 9;         // the PWM pin the LED is attached to
+int brightness = 0;  // how bright the LED is
+int fadeAmount = 5;  // how many points to fade the LED by
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // declare pin 9 to be an output:
+  pinMode(led, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // set the brightness of pin 9:
+  analogWrite(led, brightness);
+
+  // change the brightness for next time through the loop:
+  brightness = brightness + fadeAmount;
+
+  // reverse the direction of the fading at the ends of the fade:
+  if (brightness <= 0 || brightness >= 255) {
+    fadeAmount = -fadeAmount;
+  }
+  // wait for 30 milliseconds to see the dimming effect
+  delay(30);
+}
+
+```
+- Declaring variables:
+    - `led = 9;` → The LED is connected to **pin 9** on the Arduino.
+    - `brightness = 0;` → This variable controls how bright the LED is.
+    - `fadeAmount = 5;` → This determines how much the brightness increases or decreases with each loop.
+- Setup Function:
+    - `pinMode(led, OUTPUT);` → This tells the Arduino that **pin 9** will be used as an **output**, meaning it will send signals (not receive them).
+- Loop Function:
+    - Set the LED Brightness:
+        - `analogWrite(pin, value);` is used to **send a PWM signal** to a pin.
+        - PWM (**Pulse Width Modulation**) allows us to **control brightness** instead of just turning the LED on/off.
+        - The value of `brightness` ranges from **0 (OFF)** to **255 (fully ON)**.
+    - Increase Brightness:
+        - `brightness = brightness + fadeAmount;` Every time the loop runs, brightness increases by `fadeAmount` (5).
+        - This makes the LED **gradually brighter**.
+    - Reverse Direction at the Brightness Limits:
+        - `if (brightness <= 0 || brightness >= 255) {fadeAmount = -fadeAmount;}` If the brightness reaches **0 (fully OFF)** or **255 (fully ON)**, the direction of fading **reverses**.
+        
+        - `fadeAmount = -fadeAmount;` → This **flips** the value of `fadeAmount`:
+            - If it was `+5`, it becomes `5` (LED starts dimming).
+            - If it was `5`, it becomes `+5` (LED starts brightening).
+    - `delay(30);` Wait for a Short time
