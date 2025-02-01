@@ -200,3 +200,57 @@ void loop() {
             - If it was `+5`, it becomes `5` (LED starts dimming).
             - If it was `5`, it becomes `+5` (LED starts brightening).
     - `delay(30);` Wait for a Short time
+- **The LCD Program**
+
+In this program we will attach an LCD display to our board and display whatever message we want. Below is the code used.
+
+```cpp
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library by associating any needed LCD interface pin
+// with the arduino pin number it is connected to
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("Dima Raja");
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setCursor(0, 1);
+  // print the number of seconds since reset:
+  lcd.print(millis() / 1000);
+}
+```
+
+- Declaring Variables:
+    - `#include <LiquidCrystal.h>;` → This **includes the LiquidCrystal library**, which allows us to control an **LCD screen**.
+    - `const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;`
+        - These are the **pin connections** between the **Arduino and the LCD module**:
+        - `rs = 12;` → **Register Select (RS)** pin is connected to **pin 12**.
+        - `en = 11;` → **Enable (E)** pin is connected to **pin 11**.
+        - `d4 = 5;`, `d5 = 4;`, `d6 = 3;`, `d7 = 2;` → These are **data pins** used for sending commands to the LCD.
+    - `LiquidCrystal lcd(rs, en, d4, d5, d6, d7);`
+        - This **creates an LCD object** named `lcd` and assigns the pin connections to it.
+        - The `lcd` object will be used to control the LCD screen.
+- Setup Function:
+    - `lcd.begin(16, 2);`
+        - This **initializes the LCD** with **16 columns** and **2 rows**.
+        - Most LCDs use this **16x2 format**.
+    - `lcd.print("Dima Raja");`
+        - This **prints the text "Dima Raja"** on the LCD **at the default position (top-left corner)**.
+        - The message remains on the screen until something new is displayed.
+- Loop Function (Runs Continuously):
+    - `lcd.setCursor(0, 1);`
+        - This **moves the cursor to column 0, row 1** (second row of the LCD).
+        - **Why?** Because LCD rows are indexed from `0` (first row) and `1` (second row).
+    - `lcd.print(millis() / 1000);`
+        - `millis()` returns the **time in milliseconds** since the Arduino was powered on.
+        - `millis() / 1000;` converts this **from milliseconds to seconds**.
+        - This makes the LCD **display the number of seconds** since the Arduino started.    
