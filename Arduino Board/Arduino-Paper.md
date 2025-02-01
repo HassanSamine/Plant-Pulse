@@ -200,6 +200,7 @@ void loop() {
             - If it was `+5`, it becomes `5` (LED starts dimming).
             - If it was `5`, it becomes `+5` (LED starts brightening).
     - `delay(30);` Wait for a Short time
+
 - **The LCD Program**
 
 In this program we will attach an LCD display to our board and display whatever message we want. Below is the code used.
@@ -253,4 +254,86 @@ void loop() {
     - `lcd.print(millis() / 1000);`
         - `millis()` returns the **time in milliseconds** since the Arduino was powered on.
         - `millis() / 1000;` converts this **from milliseconds to seconds**.
-        - This makes the LCD **display the number of seconds** since the Arduino started.    
+        - This makes the LCD **display the number of seconds** since the Arduino started.   
+
+## How to Use Control Structures
+
+When you write a program, it typically executes line by line—the first line runs, then the second, then the third, and so on.
+
+However, in more complex code, you may need to control the flow of execution. You might want to **skip** certain lines, **repeat** a set of instructions multiple times, or execute specific lines **only when a condition is met**. This is where **Control Structures** come in.
+
+Control Structures allow you to **manage the flow of your program**, determining the order in which lines of code are executed. They achieve this using **conditions, loops, or specific instructions**, ensuring your code runs efficiently and logically.
+
+In Arduino programming, control structures are essential for managing how code executes on the microcontroller. 
+
+The main types of control structures in Arduino Programming are:
+
+1.  **Sequential Execution**
+    - This is the default behavior of a code, where instructions run one after another in the order they are written.
+2. **Conditional Statements (Decision-Making)**
+    - These allow the program to execute different blocks of code based on conditions. The most common ones are `if`, `if-else`, and `switch-case`.
+    - For example, we previously used an if statement in our **fade program**:
+        
+        ```arduino
+        if (brightness <= 0 || brightness >= 255) {
+            fadeAmount = -fadeAmount;
+          }
+        ```
+        
+        In this code, the fadeAmount variable is set to its negative value, **only** **if** the brightness goes below 0 **or** (`||`) above 255. This ensure that the line of code `fadeAmount = -fadeAmount;` is executed **only when** the condition `brightness <= 0 || brightness >= 255` is met.
+        
+3. **Loops (Iteration Structures)**
+    - Loops help execute a block of code multiple times, either for a fixed number of iterations (`for` loop) or until a condition is met (`while` and `do-while` loops).
+    - Example (`for` loop):
+        
+        ```cpp
+        for (int i = 0; i < 5; i++) {
+          Serial.print("Iteration: ");
+          Serial.println(i);
+          delay(500);
+        }
+        ```
+        
+        In this example, the loop runs **5 times**. The variable `i` starts at `0`, increments by `1` on each iteration (`i++`), and stops once it reaches `5`. Each time the loop runs, the current value of `i` is printed, followed by a **500ms delay** before the next iteration.
+        
+    - Example (`while` loop):
+        
+        ```cpp
+        int count = 0;
+        while (count < 3) {
+          Serial.println("Looping...");
+          count++;
+          delay(500);
+        }
+        ```
+        
+        Here, the loop **keeps running** as long as `count` is less than `3`. On each iteration, `"Looping..."` is printed, `count` increases by `1`, and there's a **500ms delay** before checking the condition again. Once `count` reaches `3`, the loop stops executing.
+        
+4. **Jump Statements (Branching)**
+    - **Jump statements** alter the normal flow of execution by skipping or stopping certain parts of the code. In Arduino programming, we use `break`, `continue`, and `return` to control how loops and functions behave.
+    - **Example (`break` in a loop):**
+        
+        ```cpp
+        for (int i = 0; i < 10; i++) {
+          if (i == 5) {
+            break; // Stops the loop when i reaches 5
+          }
+          Serial.println(i);
+        }
+        ```
+        
+        In this example, the loop starts at `i = 0` and runs until `i < 10`. However, when `i` reaches `5`, the `break` statement **immediately stops the loop**, preventing any further iterations. As a result, only numbers **0 to 4** are printed.
+        
+    - **Example (`continue` to skip an iteration):**
+        
+        ```cpp
+        for (int i = 0; i < 5; i++) {
+          if (i == 2) {
+            continue; // Skips iteration when i is 2
+          }
+          Serial.println(i);
+        }
+        ```
+        
+        Here, the loop prints numbers **0 to 4**, but when `i == 2`, the `continue` statement **skips that iteration**, meaning `2` is never printed. The loop then continues with the next value of `i`.         
+
