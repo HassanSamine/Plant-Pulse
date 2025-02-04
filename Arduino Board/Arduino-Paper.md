@@ -384,7 +384,23 @@ void loop() {
 
 - Declaring Variables:
     - The two lines `const int sensorMin = 0;`  and `const int sensorMax = 600;` declares two variables SensorMin and SensorMax that initializes the sensor range between 0 and 600, they are declared as `Const` because this variables will not change.
+
 - Setup Function:
-    - 
+    - The `Serial.begin()` is an important function widely used in Arduino Programming, which is why we will take this opportunity to explain what it is and when it can be used.
+    
+    - The `Serial.begin()` establishes serial communication between your Arduino board and another device, the most common use of serial communication you will establish is between your Arduino and your computer via a USB (Universal **Serial** Bus) cable.
+    
+    - When you establish a serial communication between two devices it allows them to communicate using the serial protocol.
+    
+    - The most common reason to use the `Serial.begin()` function is when you want to output some information from your Arduino board to your computer screen, in this case you will need the `Screen.Println()` function which we will be diving into later in the loop function. - The text that prints out, shows up on the serial monitor window, which can be found in the menu bar under Tools / Serial Monitor, or with the shortcut key CTRL + SHIFT + M.
+    
+    - The `Serial.begin()` function is usually in the Setup function because it only needs to run once.
+    
+    - The number 9600 in the function is called the baud rate, and the baud rate on the receiving device need to match.
+
 - Loop Function (Runs Continuously):
-    -
+    - In the first line of the loop function we utilize another important function called `analogRead()`, we first initialized an integer variable `SensorReading` and assigned to it the value of `analogRead(A0)`, so what does this mean? Well, this function allows us to use the analog pins from A0 to A5 reads the voltage from it, and uses the ADC (Analog Digital Converter) to convert it and return a number between 0 and 1023, and whatever that number is we will assign it to the variable `SensorReading`.
+    
+    - The next function we use is the `map()` function which we assign to the variable `range`, this function basically takes an existing range and it transforms it into a new range. In our example, it will take the range 0 to 600 and squish it down to 0, 1, 2 or 3.
+    
+    - Next is the control structure `Switch` which has `range` as an argument, and based on its value 0, 1, 2 or 3 it will execute either the code in case 0, 1, 2 or 3. And after a 1 millisecond `delay` the loop function is run again and we reevaluate the value of the `range` variable.
