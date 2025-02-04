@@ -341,4 +341,50 @@ The main types of control structures in Arduino Programming are:
         
 ### *Sketch Examples 2*
 
+- **The Switch Case Sketch**
 
+In this first example, we will be looking into a sketch that uses the Switch Case statement. We will be attaching a potentiometer which is a variable resistor that we will use to adjust voltage, we will attach our potentiometer to the analog pin A0.
+
+```
+// these constants won't change. They are the lowest and highest readings you
+// get from your sensor:
+const int sensorMin = 0;    // sensor minimum, discovered through experiment
+const int sensorMax = 600;  // sensor maximum, discovered through experiment
+
+void setup() {
+  // initialize serial communication:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the sensor:
+  int sensorReading = analogRead(A0);
+  // map the sensor range to a range of four options:
+  int range = map(sensorReading, sensorMin, sensorMax, 0, 3);
+
+  // do something different depending on the range value:
+  switch (range) {
+    case 0:  // your hand is on the sensor
+      Serial.println("low");
+      break;
+    case 1:  // your hand is close to the sensor
+      Serial.println("mid");
+      break;
+    case 2:  // your hand is a few inches from the sensor
+      Serial.println("upper");
+      break;
+    case 3:  // your hand is nowhere near the sensor
+      Serial.println("high");
+      break;
+  }
+  delay(1);  // delay in between reads for stability
+}
+
+```
+
+- Declaring Variables:
+    - The two lines `const int sensorMin = 0;`  and `const int sensorMax = 600;` declares two variables SensorMin and SensorMax that initializes the sensor range between 0 and 600, they are declared as `Const` because this variables will not change.
+- Setup Function:
+    - 
+- Loop Function (Runs Continuously):
+    -
