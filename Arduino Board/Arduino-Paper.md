@@ -102,9 +102,9 @@ I have showed in the Figure below how some of these holes are connected
 
 # How to Program an Arduino Board
 
-In the third and last chapter of this introductory paper about Arduino, we will be learning the basics of programming an Arduino board. We will cover how every Arduino program is laid out, how to use variables, how to use control structures and the most important Arduino functions. 
+In this chapter of this introductory paper about Arduino, we will be learning the basics of programming an Arduino board. We will cover how every Arduino program is laid out, how to use variables, how to use control structures and the most important Arduino functions. 
 
-## How to Use Variables (Setup & Loop)
+## How to Use Setup & Loop Functions and Variables
 
 ### *The Setup and Loop functions*
 
@@ -140,14 +140,14 @@ Note: When you declare a variable, you can use it in your code just by the name.
 type name;
 name = value;
 
-### *Basic Program Examples*
+### *Sketch Examples 1*
 In the Arduino IDE you can find some basic Arduino sketched that we’re gonna be using to develop a better understanding on how to program an Arduino Board. 
 
 First of all you can find these programs by going to ***File>Examples>Basics.***
 
 ![alt text](Basic%20Programs.png)
 
-- **The Fade Program:**
+- **The Fade Sketch:**
 
 The first program we will be looking into is the “Fade” program, where an LED is gradually fading using the PWM pins on an Arduino previously explained.
 
@@ -201,7 +201,7 @@ void loop() {
             - If it was `5`, it becomes `+5` (LED starts brightening).
     - `delay(30);` Wait for a Short time
 
-- **The LCD Program**
+- **The LCD Sketch**
 
 In this program we will attach an LCD display to our board and display whatever message we want. Below is the code used.
 
@@ -257,6 +257,8 @@ void loop() {
         - This makes the LCD **display the number of seconds** since the Arduino started.   
 
 ## How to Use Control Structures
+
+### *What are Control Structures*
 
 When you write a program, it typically executes line by line—the first line runs, then the second, then the third, and so on.
 
@@ -336,4 +338,7 @@ The main types of control structures in Arduino Programming are:
         ```
         
         Here, the loop prints numbers **0 to 4**, but when `i == 2`, the `continue` statement **skips that iteration**, meaning `2` is never printed. The loop then continues with the next value of `i`.         
+        
+### *Sketch Examples 2*
+
 
