@@ -43,8 +43,6 @@ In the below figures you will find how you can wire both types of DHT11’s with
 
 To start programming the DHT 11, you will first need to install the DHTLib library. It has all the functions needed to get the humidity and temperature readings from the sensor. To install it, you will need to download the below Zip file, then open your Arduino IDE, go to Sketch>Include Library>Add .ZIP Library and select the DHTLib.zip file. 
 
-[DHTLib.zip](attachment:8bd130cb-167e-43c4-b236-463267105159:DHTLib.zip)
-
 After it’s installed, upload this example program to the Arduino and open the serial monitor:
 
 ```arduino
