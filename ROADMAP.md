@@ -49,7 +49,7 @@ This document outlines the step-by-step process for building this project, inclu
 
 ## **Milestones**
 - [ Done ] Initialize the GitHub repository and project.
-- [ ] Complete component breakdown and testing.
+- [ Done ] Complete component breakdown and testing.
 - [ ] Build and simulate the project in Proteus.
 - [ ] Finalize the code and hardware integration.
 
