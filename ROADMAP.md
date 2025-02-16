@@ -26,7 +26,7 @@ This document outlines the step-by-step process for building this project, inclu
 ## **Step 3: Create the Project in Proteus**
 - Open **Proteus** and set up a new project.
 - Add all components to the simulation workspace, including the Arduino board.
-- Use the HEX file from the Arduino IDE to simulate the code for your project.
+
 
 ---
 
@@ -50,7 +50,7 @@ This document outlines the step-by-step process for building this project, inclu
 ## **Milestones**
 - [ Done ] Initialize the GitHub repository and project.
 - [ Done ] Complete component breakdown and testing.
-- [ ] Build and simulate the project in Proteus.
+- [ Done ] Build and simulate the project in Proteus.
 - [ ] Finalize the code and hardware integration.
 
 ---
