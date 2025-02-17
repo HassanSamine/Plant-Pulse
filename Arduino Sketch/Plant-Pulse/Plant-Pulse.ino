@@ -61,5 +61,11 @@ void loop() {
   lcd.print("M:");
   lcd.print(Moist);
 
+  //Controlling the Relay
+  if (Moist < 50){
+    digitalWrite(RELAY, HIGH);
+    delay(5000);
+    digitalWrite(RELAY, LOW);
+  }
 
 }
