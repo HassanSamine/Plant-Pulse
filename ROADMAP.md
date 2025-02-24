@@ -52,6 +52,7 @@ This document outlines the step-by-step process for building this project, inclu
 - [ Done ] Complete component breakdown and testing.
 - [ Done ] Build and simulate the project in Proteus.
 - [ ] Finalize the code and hardware integration.
+--->Progress: 24.02 Bought all necessary components, upon testing DHT 11 and LCD Display had some issues - Ordered the component with issues.
 
 ---
 
