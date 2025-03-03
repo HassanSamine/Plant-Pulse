@@ -41,6 +41,7 @@ void loop() {
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("WARNING! Motion is Detected!");
+    Serial.print("WARNING! Motion is Detected!\n");
     delay(3000);
     lcd.clear();
   }
@@ -52,19 +53,28 @@ void loop() {
   lcd.setCursor(0,0);
   lcd.print("T:");
   lcd.print(Temp);
+  Serial.print("Temperature = ");
+  Serial.println(Temp);
 
   lcd.setCursor(7,0);
   lcd.print("H:");
   lcd.print(Humid);
+  Serial.print("Humidity = ");
+  Serial.println(Humid);
 
   lcd.setCursor(0,1);
   lcd.print("M:");
   lcd.print(Moist);
+  Serial.print("Moisture = ");
+  Serial.println(Moist);
 
   //Controlling the Relay
-  if (Moist < 50){
+  if (Moist > 60){
     digitalWrite(RELAY, HIGH);
     delay(5000);
+    digitalWrite(RELAY, LOW);
+  }
+  else{
     digitalWrite(RELAY, LOW);
   }
 
