@@ -1,16 +1,12 @@
 # Plant-Pulse
 # Desription
-The Arduino-based garden monitoring system is a project that combines Arduino
-microcontrollers with IoT (Internet of things) technologies to create a monitoring system for
-gardens. It involves collecting data from various sensors, processing it and taking appropriate
-action.
+This project is a garden monitoring system that combines Arduino microcontrollers and various sensors to create a monitoring system for
+gardens. It collects data from various sensors, processes it and take appropriate action.
 # Key Features
 ## Sensor Integration
 Utilizing different sensors such as soil moisture, humidity, light intensity and temperature sensors to collect data.
 ## Arduino microcontroller
 Employing an Arduino Microcontroller to read the sensors data.
-## Remote Monitoring
-Provides the user with the ability to remotely monitor their garden’s conditions.
 ## Automatic Control
 Offers the possibility to automate the control of actuators such as the water pump
 ## User interface
