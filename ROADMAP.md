@@ -40,13 +40,6 @@ This document outlines the step-by-step process for building this project, inclu
 
 ---
 
-## **Additional Notes**
-- Document findings, issues, and solutions for each step in the repository.
-- Include examples of successful component tests and simulations as screenshots or videos.
-- Use a branch for experimental changes to avoid breaking the main project.
-
----
-
 ## **Milestones**
 - [ Done ] Initialize the GitHub repository and project.
 - [ Done ] Complete component breakdown and testing.
